@@ -3,7 +3,9 @@
 		*basic_istream*;
 		*basic_ostream*;
 		*cxa*;
-		__*;
+		std::*;
+		*cout*;
+		*ios_base*;
 	local:
 		*;
 };

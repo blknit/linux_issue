@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5.1)
-project(testso)
+project(testso2)
 
 SET(LIBRARY_FILE_EXTENSION so)
 SET(ROOT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../..)
@@ -26,24 +26,25 @@ SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 SET(CMAKE_INSTALL_RPATH "\$ORIGIN")
 
 set(SOURCES
-	so.cpp
+	so2.cpp
 )
 
 set(LINK_LIBS
-	-Wl,--whole-archive
-	-Wl,-Bstatic
-	stdc++
-	gcc
+	-lrt
+
 	gcc_eh
-	-Wl,-Bdynamic
-	-Wl,--no-whole-archive
 	m
 	c
+
+	pthread
+	dl
+
+	testso
 )
 
 # Define compiler flags for this library: #  -fPIC  -msse -msse2 -msse3 -Wl,-z,defs
 set(COMPILE_PARAM COMPILE_FLAGS "${ARCH_FLAGS} -fPIC  -msse -msse2 -msse3 -Wl,-z,defs")
-set(LINK_PARAM LINK_FLAGS "${ARCH_FLAGS} ${LINK_FLAGS} -nostdlib -Wl,--no-undefined -Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/testlib.expmap")
+set(LINK_PARAM LINK_FLAGS "${ARCH_FLAGS} ${LINK_FLAGS} -nodefaultlibs -Wl,--no-undefined")
 
 # Build instructions
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
