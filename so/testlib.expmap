@@ -1,0 +1,9 @@
+{
+	global:
+		*basic_istream*;
+		*basic_ostream*;
+		*cxa*;
+		std::*;
+	local:
+		*;
+};
