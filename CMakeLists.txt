@@ -31,5 +31,5 @@ ENDIF(NOT DEFINED VERSION_BRANCH)
 
 # Projects
 add_subdirectory(so)
-add_subdirectory(so2)
+#add_subdirectory(so2)
 add_subdirectory(bin)

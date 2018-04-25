@@ -4,7 +4,7 @@
 
 int main()
 {
-	void * h = dlopen("/home/tongqing.liu/test/build/bin/libtestso.so",RTLD_NOW);
+	void * h = dlopen("/home/tongqing.liu/git/linux_issue/build/bin/libtestso.so",RTLD_NOW);
 	printf("libso=%x\n",h);
 	getchar();
 	if(h)dlclose(h);

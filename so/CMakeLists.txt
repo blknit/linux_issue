@@ -3,6 +3,7 @@ project(testso)
 
 SET(LIBRARY_FILE_EXTENSION so)
 SET(ROOT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../..)
+set(CMAKE_SHARED_LINKER_FLAGS  "${CMAKE_SHARED_LINKER_FLAGS} -fuse-ld=gold")
 
 IF(ARCHITECTURE_32)
 	SET(BUILD_ARCH x86)
@@ -43,7 +44,7 @@ set(LINK_LIBS
 
 # Define compiler flags for this library: #  -fPIC  -msse -msse2 -msse3 -Wl,-z,defs
 set(COMPILE_PARAM COMPILE_FLAGS "${ARCH_FLAGS} -fPIC  -msse -msse2 -msse3 -Wl,-z,defs")
-set(LINK_PARAM LINK_FLAGS "${ARCH_FLAGS} ${LINK_FLAGS} -nostdlib -Wl,--no-undefined -Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/testlib.expmap")
+set(LINK_PARAM LINK_FLAGS "${ARCH_FLAGS} ${LINK_FLAGS} -nostdlib -Wl,--no-undefined -Wl,--no-gnu-unique")
 
 # Build instructions
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
