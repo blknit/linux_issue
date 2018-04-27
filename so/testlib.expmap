@@ -1,9 +1,0 @@
-{
-	global:
-		*basic_istream*;
-		*basic_ostream*;
-		*cxa*;
-		__*;
-	local:
-		*;
-};

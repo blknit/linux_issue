@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5.1)
-project(testso)
+project(crashso)
 
 SET(LIBRARY_FILE_EXTENSION so)
 SET(ROOT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../..)
@@ -27,7 +27,7 @@ SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 SET(CMAKE_INSTALL_RPATH "\$ORIGIN")
 
 set(SOURCES
-	so.cpp
+	crash.cpp
 )
 
 set(LINK_LIBS

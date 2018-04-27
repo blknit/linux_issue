@@ -30,6 +30,6 @@ IF(NOT DEFINED VERSION_BRANCH)
 ENDIF(NOT DEFINED VERSION_BRANCH)
 
 # Projects
-add_subdirectory(crash_so)
-add_subdirectory(fixed_so)
+add_subdirectory(so)
+#add_subdirectory(so2)
 add_subdirectory(bin)
